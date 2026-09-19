@@ -425,7 +425,7 @@ function Index() {
             loading="lazy"
           />
           <div className="result-labels" aria-hidden="true"><span>Before</span><span>After</span></div>
-          <p className="enhancement-caption">Illustrative image only. Individual experiences vary and results are not guaranteed.</p>
+          <p className="enhancement-caption">The visual presented herein represents an authentic client treatment outcome. To uphold client confidentiality and protect personally identifiable characteristics, the original background has been digitally modified and facial features have been intentionally obscured.</p>
         </div>
 
         <div className="enhancement-copy">
