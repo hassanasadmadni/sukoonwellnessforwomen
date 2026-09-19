@@ -15,6 +15,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { useState, type FormEvent } from "react";
+import logoSukoon from "@/assets/logo-sukoon.png";
 import enhancementBeforeAfter from "@/assets/result.png";
 import therapistTeam from "@/assets/our_therapist.png";
 import silverTreatment1 from "@/assets/silver-treatment-1.jpg";
@@ -227,11 +228,11 @@ function whatsappUrl(message: string) {
 function BrandMark({ compact = false }: { compact?: boolean }) {
   return (
     <div className="brand-mark" aria-label="Sukoon Wellness for Women">
-      <div className="brand-icon" aria-hidden="true"><Flower2 /></div>
-      <div>
-        <span className={compact ? "brand-name brand-name-small" : "brand-name"}>Sukoon</span>
-        <span className="brand-sub">Wellness for Women</span>
-      </div>
+      <img
+        src={logoSukoon}
+        alt="Sukoon for Queen — Massage Salon"
+        className={compact ? "brand-logo brand-logo-small" : "brand-logo"}
+      />
     </div>
   );
 }
