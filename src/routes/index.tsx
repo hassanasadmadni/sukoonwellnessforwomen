@@ -169,6 +169,50 @@ const enhancementReviews = [
   { name: "Eman", text: "Main ne treatment start karte waqt expect nahi kiya tha ke difference itna noticeable feel hoga. Sessions ke baad mujhe apni overall shape aur firmness mein clear change mehsoos hua aur confidence bhi better laga. Home service aur complete privacy mere liye biggest plus point thay." },
 ] as const;
 
+const enhancementStats = [
+  { icon: Clock3, value: "45 min", label: "Per session" },
+  { icon: CalendarDays, value: "Every 15 days", label: "2 sessions per month" },
+  { icon: Flower2, value: "25+", label: "Herbal ingredients" },
+  { icon: Sparkles, value: "15 sessions", label: "Recommended course" },
+] as const;
+
+const enhancementIncludes = [
+  "45-minute professional massage session",
+  "A blend of 25+ herbal ingredients",
+  "Imported Italian oils",
+  "Gentle massage techniques for the breast and surrounding area",
+  "Skin-conditioning and moisturising care",
+  "Focus on circulation, relaxation and skin smoothness",
+] as const;
+
+const enhancementSteps = [
+  { num: "01", title: "Private Consultation", desc: "Your therapist talks through your comfort level, boundaries, skin sensitivities, and any health notes before anything begins." },
+  { num: "02", title: "Private Setup & Draping", desc: "A quiet space is prepared at home with clean linens, warm towels and modest draping so you stay covered and comfortable throughout." },
+  { num: "03", title: "Herbal Oil Massage", desc: "Gentle, hands-on strokes with herbal oils around the chest, shoulders and upper back, adjusted to the pressure you prefer." },
+  { num: "04", title: "Aftercare Guidance", desc: "Simple tips on skin care, posture and hydration, plus a chat about how often to book based on how you feel." },
+] as const;
+
+const enhancementBenefits = [
+  "A calm, unhurried self-care session in your own home",
+  "Relief from upper-body and shoulder tension",
+  "Nourished, soft-feeling skin from herbal oils",
+  "A private, respectful space to feel more at ease with your body",
+] as const;
+
+const enhancementGoodToKnow = [
+  "Tell your therapist if you are pregnant, breastfeeding, have implants, or have had recent surgery.",
+  "Let us know about any skin conditions, allergies, pain, or lumps. A doctor should check these before booking.",
+  "You are always in control: ask for lighter pressure or stop the session at any time.",
+  "Massage is a wellness treatment. It is not a medical procedure or a substitute for surgery.",
+] as const;
+
+const enhancementFaqs = [
+  { q: "How many sessions are offered?", a: "Each 45-minute session is Rs. 4,500. We recommend 2 sessions per month, about 15 days apart, as a 15-session course. Zero advance payment is required." },
+  { q: "Will the massage be uncomfortable?", a: "No. The technique is gentle and hands-on, and your therapist adjusts pressure to what feels right for you." },
+  { q: "What results can I expect?", a: "Experiences differ from person to person, so we cannot promise a specific change in size or shape. Your therapist will talk through realistic expectations with you before you begin." },
+  { q: "Is my privacy protected?", a: "Yes. This is a private, women-only service delivered at your home, with modest draping and a respectful, professional approach." },
+] as const;
+
 const therapists = [
   {
     name: "Asad Mehmood",
@@ -365,6 +409,12 @@ function Index() {
       </section>
 
       <section id="enhancement" className="enhancement-section">
+        <div className="enhancement-intro">
+          <p className="eyebrow">Natural care for confidence</p>
+          <h2>Breast Enhancement Massage Treatment</h2>
+          <p className="enhancement-lead">A private, women-only massage treatment using herbal oils and gentle hands-on techniques, delivered in the comfort of your home. Designed around your comfort, your boundaries and your pace.</p>
+        </div>
+
         <div className="enhancement-media">
           <img
             className="enhancement-result"
@@ -375,21 +425,103 @@ function Index() {
             loading="lazy"
           />
           <div className="result-labels" aria-hidden="true"><span>Before</span><span>After</span></div>
+          <p className="enhancement-caption">Illustrative image only. Individual experiences vary and results are not guaranteed.</p>
         </div>
+
         <div className="enhancement-copy">
-          <p className="eyebrow">Natural care for confidence</p>
-          <h2>Breast Enhancement Massage Treatment</h2>
-          <p className="enhancement-lead">A private, women-only massage treatment using herbal oils and gentle hands-on techniques in the comfort of your home.</p>
           <div className="enhancement-price"><span>Per session</span><strong>Rs. 4,500</strong><small>2 sessions per month</small></div>
           <ul className="enhancement-points">
             <li><Check /> Zero advance payment</li>
             <li><Check /> No medicine</li>
             <li><Check /> Herbal oil massage</li>
-            <li><Check /> Zero side effects</li>
-            <li><Check /> 45+ satisfied clients</li>
-            <li><Check /> Visible results in 2 Sessions</li>
+            <li><Check /> Private, women-only</li>
+            <li><Check /> Home service in Lahore</li>
+            <li><Check /> Gentle, hands-on technique</li>
           </ul>
           <a className="button" href="#booking" onClick={() => setBookingPackage("Breast Enhancement Massage Treatment — Rs. 4,500 per session")}><CalendarDays /> Book This Treatment</a>
+        </div>
+
+        <div className="enhancement-details">
+          <div className="enhancement-block enhancement-procedure">
+            <p className="eyebrow">Treatment procedure</p>
+            <h3>Herbal Breast Care Massage</h3>
+            <p className="enhancement-procedure-lead">A specialised 45-minute herbal massage that combines a carefully selected blend of 25+ herbal ingredients with imported Italian oils. Professional techniques focus on circulation, relaxation and skin conditioning, to leave your skin feeling smoother, softer and well cared for.</p>
+
+            <div className="enhancement-stats">
+              {enhancementStats.map((stat) => (
+                <div key={stat.value}>
+                  <stat.icon />
+                  <strong>{stat.value}</strong>
+                  <span>{stat.label}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="enhancement-procedure-grid">
+              <article className="enhancement-info-card">
+                <Check />
+                <h3>Treatment includes</h3>
+                <ul>
+                  {enhancementIncludes.map((item) => <li key={item}><Check /> {item}</li>)}
+                </ul>
+              </article>
+              <article className="enhancement-info-card">
+                <CalendarDays />
+                <h3>Recommended course</h3>
+                <p className="enhancement-course-copy">We recommend <strong>2 sessions per month</strong>, about 15 days apart, over a course of <strong>15 sessions (approximately 7 months)</strong>. Regular sessions let your skin benefit from consistent conditioning care.</p>
+                <div className="enhancement-course-track" aria-label="15-session course">
+                  {Array.from({ length: 15 }, (_, i) => <span key={i}>{i + 1}</span>)}
+                </div>
+                <p className="enhancement-course-note">Session duration: 45 minutes · Frequency: every 15 days · Course: 15 sessions. Results vary from person to person and are not guaranteed.</p>
+              </article>
+            </div>
+          </div>
+
+          <div className="enhancement-block">
+            <p className="eyebrow">How it works</p>
+            <h3>Your session, step by step</h3>
+            <ol className="enhancement-steps">
+              {enhancementSteps.map((step) => (
+                <li key={step.num}>
+                  <span className="enhancement-step-num">{step.num}</span>
+                  <h4>{step.title}</h4>
+                  <p>{step.desc}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          <div className="enhancement-info-grid">
+            <article className="enhancement-info-card">
+              <Sparkles />
+              <h3>What you may enjoy</h3>
+              <ul>
+                {enhancementBenefits.map((item) => <li key={item}><Check /> {item}</li>)}
+              </ul>
+            </article>
+            <article className="enhancement-info-card">
+              <ShieldCheck />
+              <h3>Good to know before you book</h3>
+              <ul>
+                {enhancementGoodToKnow.map((item) => <li key={item}><Check /> {item}</li>)}
+              </ul>
+            </article>
+          </div>
+
+          <div className="enhancement-block">
+            <p className="eyebrow">Questions</p>
+            <h3>Frequently asked</h3>
+            <div className="enhancement-faq">
+              {enhancementFaqs.map((item) => (
+                <details key={item.q}>
+                  <summary>{item.q}<ChevronDown /></summary>
+                  <p>{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+
+          <p className="enhancement-disclaimer">This service is a wellness massage and is not a medical or cosmetic procedure. It does not replace advice from a doctor. If you notice a lump, pain or any change in your breasts, please see a doctor.</p>
         </div>
       </section>
 
