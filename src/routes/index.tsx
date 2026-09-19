@@ -385,8 +385,9 @@ function Index() {
             <li><Check /> Zero advance payment</li>
             <li><Check /> No medicine</li>
             <li><Check /> Herbal oil massage</li>
-            <li><Check /> Provider-stated zero side effects</li>
+            <li><Check /> Zero side effects</li>
             <li><Check /> 45+ satisfied clients</li>
+            <li><Check /> Visible results in 2 Sessions</li>
           </ul>
           <a className="button" href="#booking" onClick={() => setBookingPackage("Breast Enhancement Massage Treatment — Rs. 4,500 per session")}><CalendarDays /> Book This Treatment</a>
         </div>
